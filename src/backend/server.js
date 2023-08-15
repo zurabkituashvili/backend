@@ -5,18 +5,26 @@ const jwt = require("jsonwebtoken");
 const mysql = require("mysql2");
 const app = express();
 
-// app.use(cors());
+// app.use(cors({ origin: "http://localhost:3000" }));
 
 app.use(cors({ origin: "https://user-api-beta.vercel.app" }));
 
 app.use(bodyParser.json());
 
+// const db = mysql.createConnection({
+//   host: "sql.freedb.tech",
+//   port: 3306,
+//   user: "freedb_azzula",
+//   password: "HmJ&pAK7@c!#qUw",
+//   database: "freedb_user_registration",
+// });
+
+// MySQL database connection
 const db = mysql.createConnection({
-  host: "sql.freedb.tech",
-  port: 3306,
-  user: "freedb_azzula",
-  password: "VGmb6pA9WvEC*3S",
-  database: "freedb_user_registration",
+  host: "localhost", // Your MySQL host
+  user: "root", // Database user
+  password: "", // Database password
+  database: "user_registration", // Your database name
 });
 
 db.connect((err) => {
