@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(bodyParser.json({ origin: "https://task4-cyan.vercel.app" }));
+app.use(bodyParser.json({ origin: "https://user-api-beta.vercel.app" }));
 
 const db = mysql.createConnection({
   host: "sql.freedb.tech",
