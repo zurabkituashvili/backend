@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const mysql = require("mysql2");
 const app = express();
 
-app.use(cors({ origin: "http://localhost:3000" }));
+// app.use(cors({ origin: "http://localhost:3000" }));
 
 app.use(
   cors({
@@ -14,7 +14,7 @@ app.use(
   })
 );
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 const db = mysql.createConnection({
   host: "sql.freedb.tech",
