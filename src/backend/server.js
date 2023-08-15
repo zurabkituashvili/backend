@@ -7,14 +7,14 @@ const app = express();
 
 app.use(cors({ origin: "http://localhost:3000" }));
 
-// app.use(
-//   cors({
-//     origin: "https://task4-cyan.vercel.app", // Update with your frontend's URL
-//     credentials: true, // Enable sending cookies
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://task4-cyan.vercel.app", // Update with your frontend's URL
+    credentials: true, // Enable sending cookies
+  })
+);
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 const db = mysql.createConnection({
   host: "sql.freedb.tech",
