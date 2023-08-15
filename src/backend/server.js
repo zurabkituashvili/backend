@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(bodyParser.json({ origin: "https://backend-hlu3.onrender.com" }));
+app.use(bodyParser.json({ origin: "https://user-api-beta.vercel.app" }));
 
 const db = mysql.createConnection({
   host: "sql.freedb.tech",
