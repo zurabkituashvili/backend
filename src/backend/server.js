@@ -210,23 +210,23 @@ app.get("/users", (req, res) => {
   );
 });
 
-// app.get("/check-user-status", authenticateUser, (req, res) => {
-//   const userId = req.user.id;
-//   db.query(
-//     "SELECT status FROM users WHERE id = ?",
-//     [userId],
-//     (err, results) => {
-//       if (err) {
-//         console.error("Error retrieving user status:", err);
-//         return res.status(500).json({ error: "Internal server error" });
-//       }
-//       if (results.length === 0) {
-//         return res.status(404).json({ error: "User not found" });
-//       }
-//       res.status(200).json({ status: results[0].status });
-//     }
-//   );
-// });
+app.get("/check-user-status", authenticateUser, (req, res) => {
+  const userId = req.user.id;
+  db.query(
+    "SELECT status FROM users WHERE id = ?",
+    [userId],
+    (err, results) => {
+      if (err) {
+        console.error("Error retrieving user status:", err);
+        return res.status(500).json({ error: "Internal server error" });
+      }
+      if (results.length === 0) {
+        return res.status(404).json({ error: "User not found" });
+      }
+      res.status(200).json({ status: results[0].status });
+    }
+  );
+});
 
 const port = 8000;
 app.listen(port, () => {
