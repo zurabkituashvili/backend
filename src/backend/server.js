@@ -11,21 +11,21 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// const db = mysql.createConnection({
-//   host: "sql.freedb.tech",
-//   port: 3306,
-//   user: "freedb_azzula",
-//   password: "HmJ&pAK7@c!#qUw",
-//   database: "freedb_user_registration",
-// });
+const db = mysql.createConnection({
+  host: "sql.freedb.tech",
+  port: 3306,
+  user: "freedb_azzula",
+  password: "HmJ&pAK7@c!#qUw",
+  database: "freedb_user_registration",
+});
 
 // MySQL database connection
-const db = mysql.createConnection({
-  host: "localhost", // Your MySQL host
-  user: "root", // Database user
-  password: "", // Database password
-  database: "user_registration", // Your database name
-});
+// const db = mysql.createConnection({
+//   host: "localhost", // Your MySQL host
+//   user: "root", // Database user
+//   password: "", // Database password
+//   database: "user_registration", // Your database name
+// });
 
 db.connect((err) => {
   if (err) {
