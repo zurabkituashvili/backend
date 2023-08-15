@@ -5,7 +5,9 @@ const jwt = require("jsonwebtoken");
 const mysql = require("mysql2");
 const app = express();
 
-app.use(bodyParser.json({ origin: "https://user-api-beta.vercel.app" }));
+app.use(cors({ origin: "https://user-api-beta.vercel.app" }));
+
+app.use(bodyParser.json());
 
 const db = mysql.createConnection({
   host: "sql.freedb.tech",
