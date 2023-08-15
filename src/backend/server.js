@@ -7,7 +7,7 @@ const app = express();
 
 // app.use(cors({ origin: "http://localhost:3000" }));
 
-// app.use(cors({ origin: "https://user-api-beta.vercel.app" }));
+app.use(cors({ origin: "https://user-api-beta.vercel.app" }));
 
 app.use(bodyParser.json());
 
