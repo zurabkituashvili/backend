@@ -11,15 +11,22 @@ app.use(cors({ origin: "https://user-api-beta.vercel.app" }));
 
 app.use(bodyParser.json());
 
+// const db = mysql.createConnection({
+//   host: "sql.freedb.tech",
+//   port: 3306,
+//   user: "freedb_azzula",
+//   password: "HmJ&pAK7@c!#qUw",
+//   database: "freedb_user_registration",
+// });
+
 const db = mysql.createConnection({
-  host: "sql.freedb.tech",
+  host: "sql7.freemysqlhosting.net",
   port: 3306,
-  user: "freedb_azzula",
-  password: "HmJ&pAK7@c!#qUw",
-  database: "freedb_user_registration",
+  user: "sql7640137",
+  password: "W2YNFANC1d",
+  database: "sql7640137",
 });
 
-// MySQL database connection
 // const db = mysql.createConnection({
 //   host: "localhost", // Your MySQL host
 //   user: "root", // Database user
